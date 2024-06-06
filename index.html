@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="sans" content="noindex, nofollow" />
+    <title>Empty</title>
+    <style>
+      main {
+    max-width: 70%;
+    margin: 100px auto;
+    padding: 25px;
+    text-align: center;
+    font-size: 32px;
+    position: relative;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+
+}
+
+      #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <script>
+        var releaseDate = new Date(2024, 5, 10, 11, 11, 0).getTime();
+        
+        var countdown = setInterval(function() {
+          var now = new Date().getTime();
+          var difference = releaseDate - now;
+          var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+          document.getElementById("timer").innerHTML = "Осталось: " + days + "д " + hours + "ч " + minutes + "м " + seconds + "с ";
+        },10);
+      </script>
+      <p>ГРЯДЯЕТ НОВЫЙ СТАРТ!</p>
+      <p>
+        Каримыч находится в стадии разработки, и почти готов!<br />
+        Возможно это будет нечто удивительное и захватывающее.
+      </p>
+      <p id="timer"></p>
+    </main>
+    <video autoplay muted loop id="myVideo">
+      <source src="main.mp4" type="video/mp4">
+    </video>
+  </body>
+</html>
